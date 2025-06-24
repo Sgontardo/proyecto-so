@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-4e2140affc863ee0a228.json",
+					"jsonFile" : "directory-.-Debug-2723edbfdc7b94cb58a2.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "proyecto_so::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-proyecto_so-Debug-573e55c5d6b4fb84ef32.json",
+					"jsonFile" : "target-proyecto_so-Debug-7d307208ba568e17b89b.json",
 					"name" : "proyecto_so",
 					"projectIndex" : 0
 				},
