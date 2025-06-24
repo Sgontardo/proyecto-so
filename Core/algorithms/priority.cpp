@@ -1,3 +1,64 @@
 #include "priority.h"
+#include <algorithm>
+#include <iostream>
 
-priority::priority() {}
+priority::priority() : avg_turnaround_time(0), avg_waiting_time(0), avg_response_time(0) {}
+
+void priority::add_process(const process& p) {
+    processes.push_back(p);
+}
+
+void priority::execute() {
+    // Ordenar los procesos por prioridad (menor valor = mayor prioridad)
+    // Si las prioridades son iguales, ordenar por tiempo de llegada
+    std::sort(processes.begin(), processes.end(), [](const process& a, const process& b) {
+        if (a.get_priority() == b.get_priority()) {
+            return a.get_arrival_time() < b.get_arrival_time();
+        }
+        return a.get_priority() < b.get_priority();
+    });
+
+    int current_time = 0;
+
+    for (auto& p : processes) {
+        if (current_time < p.get_arrival_time()) {
+            current_time = p.get_arrival_time(); // Esperar si el proceso aún no ha llegado
+        }
+
+        // Calcular tiempos
+        p.set_response_time(current_time - p.get_arrival_time());
+        current_time += p.get_burst_time();
+        p.set_turnaround_time(current_time - p.get_arrival_time());
+        p.set_waiting_time(p.get_turnaround_time() - p.get_burst_time());
+    }
+
+    calculate_metrics();
+}
+
+void priority::calculate_metrics() {
+    double total_turnaround_time = 0;
+    double total_waiting_time = 0;
+    double total_response_time = 0;
+
+    for (const auto& p : processes) {
+        total_turnaround_time += p.get_turnaround_time();
+        total_waiting_time += p.get_waiting_time();
+        total_response_time += p.get_response_time();
+    }
+
+    avg_turnaround_time = total_turnaround_time / processes.size();
+    avg_waiting_time = total_waiting_time / processes.size();
+    avg_response_time = total_response_time / processes.size();
+}
+
+double priority::get_avg_turnaround_time() const {
+    return avg_turnaround_time;
+}
+
+double priority::get_avg_waiting_time() const {
+    return avg_waiting_time;
+}
+
+double priority::get_avg_response_time() const {
+    return avg_response_time;
+}
