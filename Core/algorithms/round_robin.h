@@ -18,6 +18,9 @@ public:
     double get_avg_waiting_time() const;
     double get_avg_response_time() const;
 
+    // Obtener procesos con métricas calculadas
+    const std::vector<process>& get_processes() const;
+
 private:
     int quantum;
     std::vector<process> processes;

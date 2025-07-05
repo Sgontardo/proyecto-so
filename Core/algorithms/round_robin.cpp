@@ -74,3 +74,7 @@ double round_robin::get_avg_waiting_time() const {
 double round_robin::get_avg_response_time() const {
     return avg_response_time;
 }
+
+const std::vector<process>& round_robin::get_processes() const {
+    return processes;
+}
