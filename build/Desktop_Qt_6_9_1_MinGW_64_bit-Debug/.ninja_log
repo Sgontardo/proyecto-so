@@ -34,3 +34,57 @@
 45	254	7735213580404146	C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/proyecto_so_autogen/mocs_compilation.cpp	c9feb48ba141f901
 255	2691	7735213582515233	CMakeFiles/proyecto_so.dir/mainwindow.cpp.obj	1a4fd1d7cc161bb1
 2691	2955	7735213606874047	proyecto_so.exe	4dbe54f56cb41cb
+46	708	7735224382044056	proyecto_so_autogen/timestamp	c9feb48ba141f901
+46	708	7735224382044056	proyecto_so_autogen/mocs_compilation.cpp	c9feb48ba141f901
+46	708	7735224382044056	C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/proyecto_so_autogen/timestamp	c9feb48ba141f901
+46	708	7735224382044056	C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/proyecto_so_autogen/mocs_compilation.cpp	c9feb48ba141f901
+736	1894	7735224383030390	CMakeFiles/proyecto_so.dir/Core/process.cpp.obj	149f798590a1fcec
+740	1978	7735224383075707	CMakeFiles/proyecto_so.dir/Utils/process_generator.cpp.obj	57e20cc4263211e2
+727	2056	7735224382944981	CMakeFiles/proyecto_so.dir/Core/algorithms/fcfs.cpp.obj	bccc6075339269b
+732	2072	7735224382985171	CMakeFiles/proyecto_so.dir/Core/algorithms/sjf.cpp.obj	5330186d62bc1022
+724	2280	7735224382909802	CMakeFiles/proyecto_so.dir/Core/algorithms/priority.cpp.obj	bdc72264e0de7944
+720	2338	7735224382866918	CMakeFiles/proyecto_so.dir/Core/algorithms/round_robin.cpp.obj	545908dc0f60c423
+709	3995	7735224382766547	CMakeFiles/proyecto_so.dir/proyecto_so_autogen/mocs_compilation.cpp.obj	2d415d65cc06f0e6
+712	4066	7735224382786543	CMakeFiles/proyecto_so.dir/main.cpp.obj	b88eff40ac818773
+716	4671	7735224382836832	CMakeFiles/proyecto_so.dir/mainwindow.cpp.obj	1a4fd1d7cc161bb1
+4671	4944	7735224422385031	proyecto_so.exe	4dbe54f56cb41cb
+47	234	7735229871627158	proyecto_so_autogen/timestamp	c9feb48ba141f901
+47	234	7735229871627158	proyecto_so_autogen/mocs_compilation.cpp	c9feb48ba141f901
+47	234	7735229871627158	C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/proyecto_so_autogen/timestamp	c9feb48ba141f901
+47	234	7735229871627158	C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/proyecto_so_autogen/mocs_compilation.cpp	c9feb48ba141f901
+248	951	7735229873645257	CMakeFiles/proyecto_so.dir/Core/algorithms/sjf.cpp.obj	5330186d62bc1022
+245	987	7735229873604472	CMakeFiles/proyecto_so.dir/Core/algorithms/fcfs.cpp.obj	bccc6075339269b
+242	1223	7735229873576748	CMakeFiles/proyecto_so.dir/Core/algorithms/priority.cpp.obj	bdc72264e0de7944
+239	1295	7735229873551538	CMakeFiles/proyecto_so.dir/Core/algorithms/round_robin.cpp.obj	545908dc0f60c423
+235	3384	7735229873515337	CMakeFiles/proyecto_so.dir/mainwindow.cpp.obj	1a4fd1d7cc161bb1
+3384	3724	7735229905004117	proyecto_so.exe	4dbe54f56cb41cb
+47	227	7735233394804773	proyecto_so_autogen/timestamp	c9feb48ba141f901
+47	227	7735233394804773	proyecto_so_autogen/mocs_compilation.cpp	c9feb48ba141f901
+47	227	7735233394804773	C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/proyecto_so_autogen/timestamp	c9feb48ba141f901
+47	227	7735233394804773	C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/proyecto_so_autogen/mocs_compilation.cpp	c9feb48ba141f901
+231	701	7735233396644569	CMakeFiles/proyecto_so.dir/Core/algorithms/sjf.cpp.obj	5330186d62bc1022
+228	2959	7735233396604514	CMakeFiles/proyecto_so.dir/mainwindow.cpp.obj	1a4fd1d7cc161bb1
+2960	3347	7735233423927190	proyecto_so.exe	4dbe54f56cb41cb
+42	223	7735235859414154	proyecto_so_autogen/timestamp	c9feb48ba141f901
+42	223	7735235859414154	proyecto_so_autogen/mocs_compilation.cpp	c9feb48ba141f901
+42	223	7735235859414154	C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/proyecto_so_autogen/timestamp	c9feb48ba141f901
+42	223	7735235859414154	C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/proyecto_so_autogen/mocs_compilation.cpp	c9feb48ba141f901
+230	1177	7735235861288796	CMakeFiles/proyecto_so.dir/Core/algorithms/round_robin.cpp.obj	545908dc0f60c423
+224	3518	7735235861233556	CMakeFiles/proyecto_so.dir/mainwindow.cpp.obj	1a4fd1d7cc161bb1
+3518	3877	7735235894177843	proyecto_so.exe	4dbe54f56cb41cb
+45	243	7735241604085349	proyecto_so_autogen/timestamp	c9feb48ba141f901
+45	243	7735241604085349	proyecto_so_autogen/mocs_compilation.cpp	c9feb48ba141f901
+45	243	7735241604085349	C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/proyecto_so_autogen/timestamp	c9feb48ba141f901
+45	243	7735241604085349	C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/proyecto_so_autogen/mocs_compilation.cpp	c9feb48ba141f901
+248	1201	7735241606115092	CMakeFiles/proyecto_so.dir/Core/algorithms/round_robin.cpp.obj	545908dc0f60c423
+244	3511	7735241606069959	CMakeFiles/proyecto_so.dir/mainwindow.cpp.obj	1a4fd1d7cc161bb1
+3511	3859	7735241638737027	proyecto_so.exe	4dbe54f56cb41cb
+45	746	7735247733398376	proyecto_so_autogen/timestamp	c9feb48ba141f901
+45	746	7735247733398376	proyecto_so_autogen/mocs_compilation.cpp	c9feb48ba141f901
+45	746	7735247733398376	C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/proyecto_so_autogen/timestamp	c9feb48ba141f901
+45	746	7735247733398376	C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/proyecto_so_autogen/mocs_compilation.cpp	c9feb48ba141f901
+758	2143	7735247734251350	CMakeFiles/proyecto_so.dir/Core/algorithms/round_robin.cpp.obj	545908dc0f60c423
+747	4861	7735247734151180	CMakeFiles/proyecto_so.dir/proyecto_so_autogen/mocs_compilation.cpp.obj	2d415d65cc06f0e6
+751	4914	7735247734181136	CMakeFiles/proyecto_so.dir/main.cpp.obj	b88eff40ac818773
+755	5706	7735247734216257	CMakeFiles/proyecto_so.dir/mainwindow.cpp.obj	1a4fd1d7cc161bb1
+5706	6073	7735247783731438	proyecto_so.exe	4dbe54f56cb41cb

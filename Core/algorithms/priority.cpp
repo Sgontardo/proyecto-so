@@ -100,6 +100,21 @@ void priority::calculate_metrics() {
     avg_response_time = total_response_time / processes.size();
 }
 
+double priority::get_cpu_utilization() const {
+    int total_burst_time = 0;
+    int arrival_time_min = INT_MAX;
+    int completion_time_max = 0;
+
+    for (const auto& p : processes) {
+        total_burst_time += p.get_burst_time(); // Sumar tiempos de ráfaga
+        arrival_time_min = std::min(arrival_time_min, p.get_arrival_time()); // Encontrar el menor tiempo de llegada
+        completion_time_max = std::max(completion_time_max, p.get_completion_time()); // Encontrar el mayor tiempo de finalización
+    }
+
+    int total_time = completion_time_max - arrival_time_min; // Tiempo total transcurrido
+    return (total_time > 0) ? (static_cast<double>(total_burst_time) / total_time) * 100 : 0.0;
+}
+
 double priority::get_avg_turnaround_time() const {
     return avg_turnaround_time;
 }

@@ -41,6 +41,10 @@ void process::set_completion_time(int time) {
     completion_time = time;
 }
 
+int process::get_completion_time() const {
+    return completion_time;
+}
+
 void process::set_turnaround_time(int time) {
     turnaround_time = time;
 }

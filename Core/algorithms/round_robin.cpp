@@ -3,7 +3,7 @@
 #include <queue>
 #include <iostream>
 
-round_robin::round_robin(int quantum) : quantum(quantum), avg_turnaround_time(0), avg_waiting_time(0), avg_response_time(0) {}
+round_robin::round_robin(int quantum) : quantum(quantum), avg_turnaround_time(0), avg_waiting_time(0), avg_response_time(0), idle_time(0) {}
 
 void round_robin::add_process(const process& p) {
     processes.push_back(p);
@@ -23,6 +23,7 @@ void round_robin::execute() {
     std::queue<size_t> ready_queue;
     std::vector<int> remaining_burst(processes.size());
     std::vector<bool> response_calculated(processes.size(), false);
+    int idle_time = 0; // Tiempo de inactividad de la CPU
 
     // Inicializar tiempos restantes
     for (size_t i = 0; i < processes.size(); ++i) {
@@ -40,11 +41,13 @@ void round_robin::execute() {
         }
 
         if (ready_queue.empty()) {
-            // No hay procesos listos, avanzar al tiempo de llegada del siguiente proceso
+            // Registrar tiempo de inactividad
             if (next_process_index < processes.size()) {
+                idle_time += processes[next_process_index].get_arrival_time() - current_time;
                 current_time = processes[next_process_index].get_arrival_time();
             } else {
-                current_time++; // Caso de seguridad
+                current_time++;
+                idle_time++;
             }
             continue;
         }
@@ -66,6 +69,7 @@ void round_robin::execute() {
 
         // Verificar si el proceso ha terminado
         if (remaining_burst[current_index] == 0) {
+            processes[current_index].set_completion_time(current_time); // Establecer tiempo de finalización
             processes[current_index].set_turnaround_time(current_time - processes[current_index].get_arrival_time());
             processes[current_index].set_waiting_time(
                 processes[current_index].get_turnaround_time() - processes[current_index].get_burst_time());
@@ -75,6 +79,9 @@ void round_robin::execute() {
             ready_queue.push(current_index);
         }
     }
+
+    // Guardar el tiempo de inactividad en una variable de clase (opcional)
+    this->idle_time = idle_time;
 
     calculate_metrics();
 }
@@ -112,36 +119,17 @@ const std::vector<process>& round_robin::get_processes() const {
 }
 
 double round_robin::get_cpu_utilization() const {
-    int total_burst_time = 0;
-    int total_simulation_time = 0;
+    int total_execution_time = 0; // Tiempo total de CPU ocupada
+    int arrival_time_min = INT_MAX; // Menor tiempo de llegada
+    int completion_time_max = 0; // Mayor tiempo de finalización
 
-    // Sumar los tiempos de ráfaga de todos los procesos
     for (const auto& p : processes) {
-        total_burst_time += p.get_burst_time();
+        total_execution_time += p.get_burst_time(); // Sumar tiempos de ráfaga
+        arrival_time_min = std::min(arrival_time_min, p.get_arrival_time()); // Encontrar el menor tiempo de llegada
+        completion_time_max = std::max(completion_time_max, p.get_completion_time()); // Encontrar el mayor tiempo de finalización
     }
 
-    // Calcular el tiempo total de simulación
-    if (!processes.empty()) {
-        int first_arrival = processes.front().get_arrival_time();
-        int last_completion = 0;
-
-        // Encontrar el tiempo de finalización del último proceso
-        for (const auto& p : processes) {
-            int completion_time = p.get_arrival_time() + p.get_turnaround_time();
-            if (completion_time > last_completion) {
-                last_completion = completion_time;
-            }
-        }
-
-        total_simulation_time = last_completion - first_arrival;
-    }
-
-    // Evitar división por cero
-    if (total_simulation_time == 0) return 0.0;
-
-    // Calcular la utilización de la CPU
-    double cpu_utilization = (static_cast<double>(total_burst_time) / total_simulation_time) * 100.0;
-
-    // Asegurarse de que el valor esté entre 0% y 100%
-    return std::min(cpu_utilization, 100.0);
+    int total_time = completion_time_max - arrival_time_min; // Tiempo total transcurrido
+    int active_time = total_time - idle_time; // Tiempo activo de la CPU
+    return (total_time > 0) ? (static_cast<double>(active_time) / total_time) * 100 : 0.0;
 }

@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->radioButton_rr, &QRadioButton::toggled, this, &MainWindow::onAlgorithmSelectionChanged);
     connect(ui->radioButton_priority, &QRadioButton::toggled, this, &MainWindow::onAlgorithmSelectionChanged);
     connect(ui->pushButton_ejecutar, &QPushButton::clicked, this, &MainWindow::onExecuteButtonClicked);
-    
+
     connect(ui->spinBox_num_procesos, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::generateRandomProcesses);
 
     // Configurar tablas
@@ -154,7 +154,7 @@ void MainWindow::onExecuteButtonClicked()
         // Calcular y mostrar métricas
         double avg_turnaround = pr.get_avg_turnaround_time();
         double avg_waiting = pr.get_avg_waiting_time();
-        double cpu_utilization = 100.0; // Para prioridad, asumimos 100% de utilización
+        double cpu_utilization = pr.get_cpu_utilization();
 
         updateMetrics(avg_turnaround, avg_waiting, cpu_utilization);
     }
@@ -185,7 +185,7 @@ void MainWindow::onExecuteButtonClicked()
         // Calcular y mostrar métricas
         double avg_turnaround = fcfs_algorithm.get_avg_turnaround_time();
         double avg_waiting = fcfs_algorithm.get_avg_waiting_time();
-        double cpu_utilization = 100.0; // Para FCFS, asumimos 100% de utilización
+        double cpu_utilization = fcfs_algorithm.get_cpu_utilization();
 
         updateMetrics(avg_turnaround, avg_waiting, cpu_utilization);
     }
@@ -216,7 +216,7 @@ void MainWindow::onExecuteButtonClicked()
         // Calcular y mostrar métricas
         double avg_turnaround = sjf_algorithm.get_avg_turnaround_time();
         double avg_waiting = sjf_algorithm.get_avg_waiting_time();
-        double cpu_utilization = 100.0; // Para SJF, asumimos 100% de utilización
+        double cpu_utilization = sjf_algorithm.get_cpu_utilization();
 
         updateMetrics(avg_turnaround, avg_waiting, cpu_utilization);
     }

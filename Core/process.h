@@ -25,6 +25,7 @@ public:
     int get_turnaround_time() const;
     int get_waiting_time() const;
     int get_response_time() const;
+    int get_completion_time() const;
 
 private:
     int id;
