@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     setupProcessTable();
     setupResultsTable();
 
-    // Generar procesos aleatorios
+    // Generar procesos aleatorios al iniciar
     generateRandomProcesses();
 }
 
@@ -43,7 +43,7 @@ void MainWindow::setupResultsTable()
 void MainWindow::generateRandomProcesses()
 {
     process_generator generator;
-    auto procesos = generator.generate_random_processes(10);
+    auto procesos = generator.generate_random_processes(10); // Generar 10 procesos aleatorios
 
     ui->tableWidget_procesos->setRowCount(procesos.size());
     for (int i = 0; i < procesos.size(); ++i) {
@@ -51,10 +51,11 @@ void MainWindow::generateRandomProcesses()
         ui->tableWidget_procesos->setItem(i, 1, new QTableWidgetItem(QString::number(procesos[i].get_arrival_time())));
         ui->tableWidget_procesos->setItem(i, 2, new QTableWidgetItem(QString::number(procesos[i].get_burst_time())));
 
+        // Mostrar prioridades solo si el algoritmo seleccionado es el de prioridad
         if (ui->radioButton_priority->isChecked()) {
             ui->tableWidget_procesos->setItem(i, 3, new QTableWidgetItem(QString::number(procesos[i].get_priority())));
         } else {
-            ui->tableWidget_procesos->setItem(i, 3, new QTableWidgetItem("-"));
+            ui->tableWidget_procesos->setItem(i, 3, new QTableWidgetItem("-")); // Sin prioridad
         }
     }
 }
@@ -68,6 +69,9 @@ void MainWindow::onAlgorithmSelectionChanged()
     } else {
         ui->stackedWidget_config->setCurrentIndex(2); // Configuración de otros algoritmos
     }
+
+    // Actualizar la tabla de procesos para reflejar las prioridades si es necesario
+    generateRandomProcesses();
 }
 
 void MainWindow::onExecuteButtonClicked()
