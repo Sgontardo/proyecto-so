@@ -19,6 +19,7 @@ void fcfs::execute() {
         }
         p.set_response_time(current_time - p.get_arrival_time());
         current_time += p.get_burst_time();
+        p.set_completion_time(current_time); // Establecer el tiempo de finalización
         p.set_turnaround_time(current_time - p.get_arrival_time());
         p.set_waiting_time(p.get_turnaround_time() - p.get_burst_time());
     }
@@ -41,6 +42,21 @@ void fcfs::calculate_metrics() {
     avg_response_time = total_response_time / processes.size();
 }
 
+double fcfs::get_cpu_utilization() const {
+    int total_burst_time = 0; // Tiempo total de CPU ocupada
+    int arrival_time_min = INT_MAX; // Menor tiempo de llegada
+    int completion_time_max = 0; // Mayor tiempo de finalización
+
+    for (const auto& p : processes) {
+        total_burst_time += p.get_burst_time(); // Sumar tiempos de ráfaga
+        arrival_time_min = std::min(arrival_time_min, p.get_arrival_time()); // Encontrar el menor tiempo de llegada
+        completion_time_max = std::max(completion_time_max, p.get_completion_time()); // Encontrar el mayor tiempo de finalización
+    }
+
+    int total_time = completion_time_max - arrival_time_min; // Tiempo total transcurrido
+    return (total_time > 0) ? (static_cast<double>(total_burst_time) / total_time) * 100 : 0.0;
+}
+
 double fcfs::get_avg_turnaround_time() const {
     return avg_turnaround_time;
 }
@@ -51,4 +67,8 @@ double fcfs::get_avg_waiting_time() const {
 
 double fcfs::get_avg_response_time() const {
     return avg_response_time;
+}
+
+const std::vector<process>& fcfs::get_processes() const {
+    return processes;
 }

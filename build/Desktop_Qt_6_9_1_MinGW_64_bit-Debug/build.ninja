@@ -105,25 +105,9 @@ build CMakeFiles/proyecto_so.dir/Core/algorithms/sjf.cpp.obj: CXX_COMPILER__proy
   OBJECT_DIR = CMakeFiles\proyecto_so.dir
   OBJECT_FILE_DIR = CMakeFiles\proyecto_so.dir\Core\algorithms
 
-build CMakeFiles/proyecto_so.dir/Core/scheduler.cpp.obj: CXX_COMPILER__proyecto_so_unscanned_Debug C$:/Sergio/UCAB/Semestre$ Marzo-Julio$ 2025/Sistemas$ Operativos/Proyecto/proyecto_so/Core/scheduler.cpp || cmake_object_order_depends_target_proyecto_so
-  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
-  DEP_FILE = CMakeFiles\proyecto_so.dir\Core\scheduler.cpp.obj.d
-  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -I"C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/proyecto_so_autogen/include" -isystem C:/Qt/6.9.1/mingw_64/include/QtCore -isystem C:/Qt/6.9.1/mingw_64/include -isystem C:/Qt/6.9.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.9.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.9.1/mingw_64/include/QtGui
-  OBJECT_DIR = CMakeFiles\proyecto_so.dir
-  OBJECT_FILE_DIR = CMakeFiles\proyecto_so.dir\Core
-
 build CMakeFiles/proyecto_so.dir/Core/process.cpp.obj: CXX_COMPILER__proyecto_so_unscanned_Debug C$:/Sergio/UCAB/Semestre$ Marzo-Julio$ 2025/Sistemas$ Operativos/Proyecto/proyecto_so/Core/process.cpp || cmake_object_order_depends_target_proyecto_so
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = CMakeFiles\proyecto_so.dir\Core\process.cpp.obj.d
-  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -I"C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/proyecto_so_autogen/include" -isystem C:/Qt/6.9.1/mingw_64/include/QtCore -isystem C:/Qt/6.9.1/mingw_64/include -isystem C:/Qt/6.9.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.9.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.9.1/mingw_64/include/QtGui
-  OBJECT_DIR = CMakeFiles\proyecto_so.dir
-  OBJECT_FILE_DIR = CMakeFiles\proyecto_so.dir\Core
-
-build CMakeFiles/proyecto_so.dir/Core/metrics.cpp.obj: CXX_COMPILER__proyecto_so_unscanned_Debug C$:/Sergio/UCAB/Semestre$ Marzo-Julio$ 2025/Sistemas$ Operativos/Proyecto/proyecto_so/Core/metrics.cpp || cmake_object_order_depends_target_proyecto_so
-  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
-  DEP_FILE = CMakeFiles\proyecto_so.dir\Core\metrics.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
   INCLUDES = -I"C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/proyecto_so_autogen/include" -isystem C:/Qt/6.9.1/mingw_64/include/QtCore -isystem C:/Qt/6.9.1/mingw_64/include -isystem C:/Qt/6.9.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.9.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.9.1/mingw_64/include/QtGui
   OBJECT_DIR = CMakeFiles\proyecto_so.dir
@@ -137,14 +121,6 @@ build CMakeFiles/proyecto_so.dir/Utils/process_generator.cpp.obj: CXX_COMPILER__
   OBJECT_DIR = CMakeFiles\proyecto_so.dir
   OBJECT_FILE_DIR = CMakeFiles\proyecto_so.dir\Utils
 
-build CMakeFiles/proyecto_so.dir/UI/results_display.cpp.obj: CXX_COMPILER__proyecto_so_unscanned_Debug C$:/Sergio/UCAB/Semestre$ Marzo-Julio$ 2025/Sistemas$ Operativos/Proyecto/proyecto_so/UI/results_display.cpp || cmake_object_order_depends_target_proyecto_so
-  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
-  DEP_FILE = CMakeFiles\proyecto_so.dir\UI\results_display.cpp.obj.d
-  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -I"C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/proyecto_so_autogen/include" -isystem C:/Qt/6.9.1/mingw_64/include/QtCore -isystem C:/Qt/6.9.1/mingw_64/include -isystem C:/Qt/6.9.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.9.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.9.1/mingw_64/include/QtGui
-  OBJECT_DIR = CMakeFiles\proyecto_so.dir
-  OBJECT_FILE_DIR = CMakeFiles\proyecto_so.dir\UI
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target proyecto_so
@@ -153,7 +129,7 @@ build CMakeFiles/proyecto_so.dir/UI/results_display.cpp.obj: CXX_COMPILER__proye
 #############################################
 # Link the executable proyecto_so.exe
 
-build proyecto_so.exe: CXX_EXECUTABLE_LINKER__proyecto_so_Debug CMakeFiles/proyecto_so.dir/proyecto_so_autogen/mocs_compilation.cpp.obj CMakeFiles/proyecto_so.dir/main.cpp.obj CMakeFiles/proyecto_so.dir/mainwindow.cpp.obj CMakeFiles/proyecto_so.dir/Core/algorithms/round_robin.cpp.obj CMakeFiles/proyecto_so.dir/Core/algorithms/priority.cpp.obj CMakeFiles/proyecto_so.dir/Core/algorithms/fcfs.cpp.obj CMakeFiles/proyecto_so.dir/Core/algorithms/sjf.cpp.obj CMakeFiles/proyecto_so.dir/Core/scheduler.cpp.obj CMakeFiles/proyecto_so.dir/Core/process.cpp.obj CMakeFiles/proyecto_so.dir/Core/metrics.cpp.obj CMakeFiles/proyecto_so.dir/Utils/process_generator.cpp.obj CMakeFiles/proyecto_so.dir/UI/results_display.cpp.obj | C$:/Qt/6.9.1/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.9.1/mingw_64/lib/libQt6Gui.a C$:/Qt/6.9.1/mingw_64/lib/libQt6Core.a C$:/Qt/6.9.1/mingw_64/lib/libQt6EntryPoint.a || proyecto_so_autogen proyecto_so_autogen_timestamp_deps
+build proyecto_so.exe: CXX_EXECUTABLE_LINKER__proyecto_so_Debug CMakeFiles/proyecto_so.dir/proyecto_so_autogen/mocs_compilation.cpp.obj CMakeFiles/proyecto_so.dir/main.cpp.obj CMakeFiles/proyecto_so.dir/mainwindow.cpp.obj CMakeFiles/proyecto_so.dir/Core/algorithms/round_robin.cpp.obj CMakeFiles/proyecto_so.dir/Core/algorithms/priority.cpp.obj CMakeFiles/proyecto_so.dir/Core/algorithms/fcfs.cpp.obj CMakeFiles/proyecto_so.dir/Core/algorithms/sjf.cpp.obj CMakeFiles/proyecto_so.dir/Core/process.cpp.obj CMakeFiles/proyecto_so.dir/Utils/process_generator.cpp.obj | C$:/Qt/6.9.1/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.9.1/mingw_64/lib/libQt6Gui.a C$:/Qt/6.9.1/mingw_64/lib/libQt6Core.a C$:/Qt/6.9.1/mingw_64/lib/libQt6EntryPoint.a || proyecto_so_autogen proyecto_so_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.9.1/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.9.1/mingw_64/lib/libQt6Gui.a  C:/Qt/6.9.1/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.9.1/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

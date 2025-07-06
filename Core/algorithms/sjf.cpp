@@ -8,52 +8,25 @@ void sjf::add_process(const process& p) {
 }
 
 void sjf::execute() {
-    // SJF no-preemptivo
-    std::vector<process> ready_queue;
-    std::vector<bool> finished(processes.size(), false);
-    int completed = 0;
+    // Ordenar los procesos por ráfaga (y por llegada si las ráfagas son iguales)
+    std::sort(processes.begin(), processes.end(), [](const process& a, const process& b) {
+        if (a.get_burst_time() == b.get_burst_time()) {
+            return a.get_arrival_time() < b.get_arrival_time();
+        }
+        return a.get_burst_time() < b.get_burst_time();
+    });
+
     int current_time = 0;
-
-    while (completed < processes.size()) {
-        // Buscar procesos que han llegado y no han terminado
-        ready_queue.clear();
-        for (size_t i = 0; i < processes.size(); ++i) {
-            if (!finished[i] && processes[i].get_arrival_time() <= current_time) {
-                ready_queue.push_back(processes[i]);
-            }
+    for (auto& p : processes) {
+        if (current_time < p.get_arrival_time()) {
+            current_time = p.get_arrival_time();
         }
-
-        if (ready_queue.empty()) {
-            current_time++;
-            continue;
-        }
-
-        // Seleccionar el proceso con menor burst_time
-        auto it = std::min_element(ready_queue.begin(), ready_queue.end(),
-            [](const process& a, const process& b) {
-                return a.get_burst_time() < b.get_burst_time();
-            });
-
-        // Encontrar el índice real en processes
-        int idx = -1;
-        for (size_t i = 0; i < processes.size(); ++i) {
-            if (!finished[i] && processes[i].get_id() == it->get_id()) {
-                idx = static_cast<int>(i);
-                break;
-            }
-        }
-
-        if (idx == -1) continue;
-
-        // Calcular tiempos
-        processes[idx].set_response_time(current_time - processes[idx].get_arrival_time());
-        current_time += processes[idx].get_burst_time();
-        processes[idx].set_turnaround_time(current_time - processes[idx].get_arrival_time());
-        processes[idx].set_waiting_time(processes[idx].get_turnaround_time() - processes[idx].get_burst_time());
-        finished[idx] = true;
-        completed++;
+        p.set_response_time(current_time - p.get_arrival_time());
+        current_time += p.get_burst_time();
+        p.set_completion_time(current_time); // Establecer el tiempo de finalización
+        p.set_turnaround_time(current_time - p.get_arrival_time());
+        p.set_waiting_time(p.get_turnaround_time() - p.get_burst_time());
     }
-
     calculate_metrics();
 }
 
@@ -73,6 +46,21 @@ void sjf::calculate_metrics() {
     avg_response_time = total_response_time / processes.size();
 }
 
+double sjf::get_cpu_utilization() const {
+    int total_burst_time = 0; // Tiempo total de CPU ocupada
+    int arrival_time_min = INT_MAX; // Menor tiempo de llegada
+    int completion_time_max = 0; // Mayor tiempo de finalización
+
+    for (const auto& p : processes) {
+        total_burst_time += p.get_burst_time(); // Sumar tiempos de ráfaga
+        arrival_time_min = std::min(arrival_time_min, p.get_arrival_time()); // Encontrar el menor tiempo de llegada
+        completion_time_max = std::max(completion_time_max, p.get_completion_time()); // Encontrar el mayor tiempo de finalización
+    }
+
+    int total_time = completion_time_max - arrival_time_min; // Tiempo total transcurrido
+    return (total_time > 0) ? (static_cast<double>(total_burst_time) / total_time) * 100 : 0.0;
+}
+
 double sjf::get_avg_turnaround_time() const {
     return avg_turnaround_time;
 }
@@ -83,4 +71,8 @@ double sjf::get_avg_waiting_time() const {
 
 double sjf::get_avg_response_time() const {
     return avg_response_time;
+}
+
+const std::vector<process>& sjf::get_processes() const {
+    return processes;
 }

@@ -471,27 +471,9 @@
 			null
 		],
 		[
-			"C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/Core/metrics.h",
-			"MU",
-			"4VKJKCZPXG/moc_metrics.cpp",
-			null
-		],
-		[
 			"C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/Core/process.h",
 			"MU",
 			"4VKJKCZPXG/moc_process.cpp",
-			null
-		],
-		[
-			"C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/Core/scheduler.h",
-			"MU",
-			"4VKJKCZPXG/moc_scheduler.cpp",
-			null
-		],
-		[
-			"C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/UI/results_display.h",
-			"MU",
-			"KRKR4BN5RM/moc_results_display.cpp",
 			null
 		],
 		[
@@ -599,22 +581,7 @@
 			null
 		],
 		[
-			"C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/Core/metrics.cpp",
-			"MU",
-			null
-		],
-		[
 			"C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/Core/process.cpp",
-			"MU",
-			null
-		],
-		[
-			"C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/Core/scheduler.cpp",
-			"MU",
-			null
-		],
-		[
-			"C:/Sergio/UCAB/Semestre Marzo-Julio 2025/Sistemas Operativos/Proyecto/proyecto_so/UI/results_display.cpp",
 			"MU",
 			null
 		],
