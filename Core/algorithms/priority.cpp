@@ -12,7 +12,51 @@ void priority::add_process(const process& p) {
 void priority::execute() {
     if (preemptive) {
         // Algoritmo de prioridad con desalojo
-        // Implementar lógica para manejar interrupciones
+        auto compare = [](process* a, process* b) {
+            if (a->get_priority() == b->get_priority()) {
+                return a->get_arrival_time() > b->get_arrival_time();
+            }
+            return a->get_priority() > b->get_priority();
+        };
+
+        std::priority_queue<process*, std::vector<process*>, decltype(compare)> ready_queue(compare);
+        int current_time = 0;
+        int completed_processes = 0;
+
+        while (completed_processes < processes.size()) {
+            // Agregar procesos que han llegado a la cola de listos
+            for (auto& p : processes) {
+                if (p.get_arrival_time() <= current_time && p.get_remaining_time() > 0 && !p.is_in_queue()) {
+                    ready_queue.push(&p);
+                    p.set_in_queue(true);
+                }
+            }
+
+            if (ready_queue.empty()) {
+                // Si no hay procesos listos, avanzar el tiempo
+                current_time++;
+                continue;
+            }
+
+            // Ejecutar el proceso con mayor prioridad
+            process* current_process = ready_queue.top();
+            ready_queue.pop();
+
+            // Ejecutar el proceso por 1 unidad de tiempo
+            current_process->execute(1);
+            current_time++;
+
+            // Si el proceso ha terminado, calcular sus métricas
+            if (current_process->get_remaining_time() == 0) {
+                current_process->set_completion_time(current_time);
+                current_process->set_turnaround_time(current_time - current_process->get_arrival_time());
+                current_process->set_waiting_time(current_process->get_turnaround_time() - current_process->get_burst_time());
+                completed_processes++;
+            } else {
+                // Si no ha terminado, volver a agregarlo a la cola
+                ready_queue.push(current_process);
+            }
+        }
     } else {
         // Algoritmo de prioridad sin desalojo
         std::sort(processes.begin(), processes.end(), [](const process& a, const process& b) {

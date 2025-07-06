@@ -4,6 +4,14 @@
 #include <vector>
 #include "../process.h"
 
+// Estructura para comparar procesos por prioridad
+struct ComparePriority {
+    bool operator()(const process& a, const process& b) const {
+        // Procesos con menor valor de prioridad tienen mayor prioridad
+        return a.get_priority() > b.get_priority();
+    }
+};
+
 class priority
 {
 public:

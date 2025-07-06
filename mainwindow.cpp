@@ -51,11 +51,10 @@ void MainWindow::generateRandomProcesses()
         ui->tableWidget_procesos->setItem(i, 1, new QTableWidgetItem(QString::number(procesos[i].get_arrival_time())));
         ui->tableWidget_procesos->setItem(i, 2, new QTableWidgetItem(QString::number(procesos[i].get_burst_time())));
 
-        // Solo mostrar prioridades si el algoritmo seleccionado es el de prioridad
         if (ui->radioButton_priority->isChecked()) {
             ui->tableWidget_procesos->setItem(i, 3, new QTableWidgetItem(QString::number(procesos[i].get_priority())));
         } else {
-            ui->tableWidget_procesos->setItem(i, 3, new QTableWidgetItem("-")); // Sin prioridad
+            ui->tableWidget_procesos->setItem(i, 3, new QTableWidgetItem("-"));
         }
     }
 }
