@@ -36,6 +36,8 @@ private:
     double avg_turnaround_time;
     double avg_waiting_time;
     double avg_response_time;
+
+    int idle_time; // Tiempo total de inactividad de la CPU
 };
 
 #endif // PRIORITY_H

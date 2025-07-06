@@ -3,7 +3,7 @@
 #include <queue>
 #include <iostream>
 
-priority::priority(bool preemptive) : preemptive(preemptive), avg_turnaround_time(0), avg_waiting_time(0), avg_response_time(0) {}
+priority::priority(bool preemptive) : preemptive(preemptive), avg_turnaround_time(0), avg_waiting_time(0), avg_response_time(0), idle_time(0) {}
 
 void priority::add_process(const process& p) {
     processes.push_back(p);
@@ -11,7 +11,6 @@ void priority::add_process(const process& p) {
 
 void priority::execute() {
     if (preemptive) {
-        // Algoritmo de prioridad con desalojo
         auto compare = [](process* a, process* b) {
             if (a->get_priority() == b->get_priority()) {
                 return a->get_arrival_time() > b->get_arrival_time();
@@ -22,6 +21,7 @@ void priority::execute() {
         std::priority_queue<process*, std::vector<process*>, decltype(compare)> ready_queue(compare);
         int current_time = 0;
         int completed_processes = 0;
+        int idle_time = 0; // Tiempo de inactividad de la CPU
 
         while (completed_processes < processes.size()) {
             // Agregar procesos que han llegado a la cola de listos
@@ -33,7 +33,8 @@ void priority::execute() {
             }
 
             if (ready_queue.empty()) {
-                // Si no hay procesos listos, avanzar el tiempo
+                // Registrar tiempo de inactividad
+                idle_time++;
                 current_time++;
                 continue;
             }
@@ -57,6 +58,9 @@ void priority::execute() {
                 ready_queue.push(current_process);
             }
         }
+
+        // Guardar el tiempo de inactividad en una variable de clase (opcional)
+        this->idle_time = idle_time;
     } else {
         // Algoritmo de prioridad sin desalojo
         std::sort(processes.begin(), processes.end(), [](const process& a, const process& b) {
@@ -67,18 +71,24 @@ void priority::execute() {
         });
 
         int current_time = 0;
+        int idle_time = 0; // Tiempo de inactividad de la CPU
 
         for (auto& p : processes) {
             if (current_time < p.get_arrival_time()) {
+                idle_time += p.get_arrival_time() - current_time; // Registrar tiempo de inactividad
                 current_time = p.get_arrival_time(); // Esperar si el proceso aún no ha llegado
             }
 
             // Calcular tiempos
             p.set_response_time(current_time - p.get_arrival_time());
             current_time += p.get_burst_time();
+            p.set_completion_time(current_time); // Registrar tiempo de finalización
             p.set_turnaround_time(current_time - p.get_arrival_time());
             p.set_waiting_time(p.get_turnaround_time() - p.get_burst_time());
         }
+
+        // Guardar el tiempo de inactividad en una variable de clase
+        this->idle_time = idle_time;
     }
 
     calculate_metrics();
