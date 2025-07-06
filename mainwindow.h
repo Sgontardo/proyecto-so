@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QTableWidget>
 #include "Core/algorithms/round_robin.h"
+#include "Core/algorithms/priority.h"
 #include "Utils/process_generator.h"
 #include "UI/results_display.h"
 
@@ -32,6 +33,7 @@ private:
     void setupProcessTable();           // Configurar tabla de procesos
     void setupResultsTable();           // Configurar tabla de resultados
     void generateRandomProcesses();     // Generar procesos aleatorios
+    void updateMetrics(double avg_turnaround, double avg_waiting, double cpu_utilization); // Actualizar métricas
 };
 
 #endif // MAINWINDOW_H

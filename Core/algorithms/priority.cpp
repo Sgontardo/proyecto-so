@@ -1,35 +1,40 @@
 #include "priority.h"
 #include <algorithm>
+#include <queue>
 #include <iostream>
 
-priority::priority() : avg_turnaround_time(0), avg_waiting_time(0), avg_response_time(0) {}
+priority::priority(bool preemptive) : preemptive(preemptive), avg_turnaround_time(0), avg_waiting_time(0), avg_response_time(0) {}
 
 void priority::add_process(const process& p) {
     processes.push_back(p);
 }
 
 void priority::execute() {
-    // Ordenar los procesos por prioridad (menor valor = mayor prioridad)
-    // Si las prioridades son iguales, ordenar por tiempo de llegada
-    std::sort(processes.begin(), processes.end(), [](const process& a, const process& b) {
-        if (a.get_priority() == b.get_priority()) {
-            return a.get_arrival_time() < b.get_arrival_time();
+    if (preemptive) {
+        // Algoritmo de prioridad con desalojo
+        // Implementar lógica para manejar interrupciones
+    } else {
+        // Algoritmo de prioridad sin desalojo
+        std::sort(processes.begin(), processes.end(), [](const process& a, const process& b) {
+            if (a.get_priority() == b.get_priority()) {
+                return a.get_arrival_time() < b.get_arrival_time();
+            }
+            return a.get_priority() < b.get_priority();
+        });
+
+        int current_time = 0;
+
+        for (auto& p : processes) {
+            if (current_time < p.get_arrival_time()) {
+                current_time = p.get_arrival_time(); // Esperar si el proceso aún no ha llegado
+            }
+
+            // Calcular tiempos
+            p.set_response_time(current_time - p.get_arrival_time());
+            current_time += p.get_burst_time();
+            p.set_turnaround_time(current_time - p.get_arrival_time());
+            p.set_waiting_time(p.get_turnaround_time() - p.get_burst_time());
         }
-        return a.get_priority() < b.get_priority();
-    });
-
-    int current_time = 0;
-
-    for (auto& p : processes) {
-        if (current_time < p.get_arrival_time()) {
-            current_time = p.get_arrival_time(); // Esperar si el proceso aún no ha llegado
-        }
-
-        // Calcular tiempos
-        p.set_response_time(current_time - p.get_arrival_time());
-        current_time += p.get_burst_time();
-        p.set_turnaround_time(current_time - p.get_arrival_time());
-        p.set_waiting_time(p.get_turnaround_time() - p.get_burst_time());
     }
 
     calculate_metrics();
@@ -61,4 +66,8 @@ double priority::get_avg_waiting_time() const {
 
 double priority::get_avg_response_time() const {
     return avg_response_time;
+}
+
+const std::vector<process>& priority::get_processes() const {
+    return processes;
 }

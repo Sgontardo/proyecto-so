@@ -7,7 +7,7 @@
 class priority
 {
 public:
-    priority();
+    priority(bool preemptive);
     void add_process(const process& p);
     void execute();
     void calculate_metrics();
@@ -17,8 +17,11 @@ public:
     double get_avg_waiting_time() const;
     double get_avg_response_time() const;
 
+    const std::vector<process>& get_processes() const;
+
 private:
     std::vector<process> processes;
+    bool preemptive; // Indica si es con desalojo
 
     // Métricas
     double avg_turnaround_time;
