@@ -14,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->radioButton_rr, &QRadioButton::toggled, this, &MainWindow::onAlgorithmSelectionChanged);
     connect(ui->radioButton_priority, &QRadioButton::toggled, this, &MainWindow::onAlgorithmSelectionChanged);
     connect(ui->pushButton_ejecutar, &QPushButton::clicked, this, &MainWindow::onExecuteButtonClicked);
+    
+    connect(ui->spinBox_num_procesos, QOverload<int>::of(&QSpinBox::valueChanged), this, &MainWindow::generateRandomProcesses);
 
     // Configurar tablas
     setupProcessTable();
@@ -42,8 +44,11 @@ void MainWindow::setupResultsTable()
 
 void MainWindow::generateRandomProcesses()
 {
+    // Obtener el número de procesos del QSpinBox
+    int num_processes = ui->spinBox_num_procesos->value();
+
     process_generator generator;
-    auto procesos = generator.generate_random_processes(10); // Generar 10 procesos aleatorios
+    auto procesos = generator.generate_random_processes(num_processes); // Generar procesos aleatorios
 
     ui->tableWidget_procesos->setRowCount(procesos.size());
     for (int i = 0; i < procesos.size(); ++i) {

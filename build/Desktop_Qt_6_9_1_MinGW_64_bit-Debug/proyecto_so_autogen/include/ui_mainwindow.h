@@ -22,6 +22,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableWidget>
@@ -67,6 +68,8 @@ public:
     QLabel *label_cpu_utilization;
     QLabel *label_proy_so;
     QFrame *frame_3;
+    QLabel *label_num_procesos;
+    QSpinBox *spinBox_num_procesos;
     QMenuBar *menubar;
     QMenu *menuProyecto_de_Sistemas_Operativos;
     QStatusBar *statusbar;
@@ -95,7 +98,7 @@ public:
         frame_2->setFrameShadow(QFrame::Shadow::Raised);
         frame_6 = new QFrame(frame_2);
         frame_6->setObjectName("frame_6");
-        frame_6->setGeometry(QRect(0, 80, 761, 171));
+        frame_6->setGeometry(QRect(0, 80, 781, 171));
         QFont font;
         font.setKerning(true);
         frame_6->setFont(font);
@@ -107,7 +110,7 @@ public:
         frame_6->setLineWidth(0);
         tableWidget_procesos = new QTableWidget(frame_6);
         tableWidget_procesos->setObjectName("tableWidget_procesos");
-        tableWidget_procesos->setGeometry(QRect(10, 10, 451, 151));
+        tableWidget_procesos->setGeometry(QRect(10, 10, 471, 151));
         tableWidget_procesos->setStyleSheet(QString::fromUtf8("QFrame{\n"
 "	background-color: rgba(125, 151, 255, 0.15);\n"
 "	border-radius: 15px;\n"
@@ -168,7 +171,7 @@ public:
         label_config_alg->setAlignment(Qt::AlignmentFlag::AlignCenter);
         stackedWidget_config = new QStackedWidget(frame);
         stackedWidget_config->setObjectName("stackedWidget_config");
-        stackedWidget_config->setGeometry(QRect(20, 320, 181, 161));
+        stackedWidget_config->setGeometry(QRect(20, 370, 181, 161));
         stackedWidget_config->setStyleSheet(QString::fromUtf8("QFrame{\n"
 "	background-color: rgba(255, 255, 255,0.45);\n"
 "	border-radius: 15px;\n"
@@ -178,7 +181,7 @@ public:
         roundRobinPage->setObjectName("roundRobinPage");
         roundRobinWidget = new QWidget(roundRobinPage);
         roundRobinWidget->setObjectName("roundRobinWidget");
-        roundRobinWidget->setGeometry(QRect(10, 30, 161, 101));
+        roundRobinWidget->setGeometry(QRect(0, 20, 181, 141));
         label_quantum = new QLabel(roundRobinWidget);
         label_quantum->setObjectName("label_quantum");
         label_quantum->setGeometry(QRect(10, 40, 61, 21));
@@ -191,7 +194,7 @@ public:
         fcfsPage->setObjectName("fcfsPage");
         fcfsWidget = new QWidget(fcfsPage);
         fcfsWidget->setObjectName("fcfsWidget");
-        fcfsWidget->setGeometry(QRect(0, 20, 181, 101));
+        fcfsWidget->setGeometry(QRect(0, 20, 181, 141));
         label_fcfs = new QLabel(fcfsWidget);
         label_fcfs->setObjectName("label_fcfs");
         label_fcfs->setGeometry(QRect(0, 0, 171, 61));
@@ -200,7 +203,7 @@ public:
         sjfPage->setObjectName("sjfPage");
         sjfWidget = new QWidget(sjfPage);
         sjfWidget->setObjectName("sjfWidget");
-        sjfWidget->setGeometry(QRect(10, 20, 161, 111));
+        sjfWidget->setGeometry(QRect(0, 20, 181, 141));
         label_sjf = new QLabel(sjfWidget);
         label_sjf->setObjectName("label_sjf");
         label_sjf->setGeometry(QRect(0, 40, 161, 16));
@@ -209,7 +212,7 @@ public:
         priorityPage->setObjectName("priorityPage");
         priorityWidget = new QWidget(priorityPage);
         priorityWidget->setObjectName("priorityWidget");
-        priorityWidget->setGeometry(QRect(10, 20, 161, 121));
+        priorityWidget->setGeometry(QRect(0, 20, 181, 141));
         label_prioridad = new QLabel(priorityWidget);
         label_prioridad->setObjectName("label_prioridad");
         label_prioridad->setGeometry(QRect(20, 20, 111, 16));
@@ -232,7 +235,7 @@ public:
         frame_7->setFrameShadow(QFrame::Shadow::Raised);
         tableWidget_resultados = new QTableWidget(frame_7);
         tableWidget_resultados->setObjectName("tableWidget_resultados");
-        tableWidget_resultados->setGeometry(QRect(10, 10, 441, 191));
+        tableWidget_resultados->setGeometry(QRect(10, 10, 461, 191));
         tableWidget_resultados->setStyleSheet(QString::fromUtf8("QFrame{\n"
 "	background-color: rgba(125, 151, 255, 0.15);\n"
 "	border-radius: 15px;\n"
@@ -241,7 +244,7 @@ public:
 ""));
         label_avg_waiting_time = new QLabel(frame_7);
         label_avg_waiting_time->setObjectName("label_avg_waiting_time");
-        label_avg_waiting_time->setGeometry(QRect(470, 80, 191, 31));
+        label_avg_waiting_time->setGeometry(QRect(500, 80, 241, 31));
         label_avg_waiting_time->setStyleSheet(QString::fromUtf8("QFrame{\n"
 "	background-color: rgba(125, 151, 255, 0.15);\n"
 "	border-radius: 15px;\n"
@@ -250,7 +253,7 @@ public:
         label_avg_waiting_time->setAlignment(Qt::AlignmentFlag::AlignCenter);
         label_avg_turnaround_time = new QLabel(frame_7);
         label_avg_turnaround_time->setObjectName("label_avg_turnaround_time");
-        label_avg_turnaround_time->setGeometry(QRect(470, 20, 191, 31));
+        label_avg_turnaround_time->setGeometry(QRect(500, 20, 241, 31));
         label_avg_turnaround_time->setStyleSheet(QString::fromUtf8("QFrame{\n"
 "	background-color: rgba(125, 151, 255, 0.15);\n"
 "	border-radius: 15px;\n"
@@ -259,7 +262,7 @@ public:
         label_avg_turnaround_time->setAlignment(Qt::AlignmentFlag::AlignCenter);
         label_cpu_utilization = new QLabel(frame_7);
         label_cpu_utilization->setObjectName("label_cpu_utilization");
-        label_cpu_utilization->setGeometry(QRect(470, 140, 191, 31));
+        label_cpu_utilization->setGeometry(QRect(500, 140, 241, 31));
         label_cpu_utilization->setStyleSheet(QString::fromUtf8("QFrame{\n"
 "	background-color: rgba(125, 151, 255, 0.15);\n"
 "	border-radius: 15px;\n"
@@ -283,6 +286,21 @@ public:
 "}"));
         frame_3->setFrameShape(QFrame::Shape::StyledPanel);
         frame_3->setFrameShadow(QFrame::Shadow::Raised);
+        label_num_procesos = new QLabel(frame);
+        label_num_procesos->setObjectName("label_num_procesos");
+        label_num_procesos->setGeometry(QRect(20, 305, 181, 21));
+        label_num_procesos->setStyleSheet(QString::fromUtf8("QFrame {\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	border-radius: 15px;\n"
+"	border: 1px solid rgba(255, 255, 255, 0.15);\n"
+"}"));
+        label_num_procesos->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        spinBox_num_procesos = new QSpinBox(frame);
+        spinBox_num_procesos->setObjectName("spinBox_num_procesos");
+        spinBox_num_procesos->setGeometry(QRect(80, 330, 61, 31));
+        spinBox_num_procesos->setMinimum(2);
+        spinBox_num_procesos->setMaximum(10);
+        spinBox_num_procesos->setValue(10);
         frame_3->raise();
         frame_2->raise();
         label_seleccion_alg->raise();
@@ -294,6 +312,8 @@ public:
         stackedWidget_config->raise();
         frame_7->raise();
         label_proy_so->raise();
+        label_num_procesos->raise();
+        spinBox_num_procesos->raise();
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -309,7 +329,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget_config->setCurrentIndex(1);
+        stackedWidget_config->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -337,6 +357,7 @@ public:
         label_avg_turnaround_time->setText(QCoreApplication::translate("MainWindow", "Tiempo promedio de espera", nullptr));
         label_cpu_utilization->setText(QCoreApplication::translate("MainWindow", "Utilizaci\303\263n de la CPU", nullptr));
         label_proy_so->setText(QCoreApplication::translate("MainWindow", "Proyecto de Sistemas Operativos", nullptr));
+        label_num_procesos->setText(QCoreApplication::translate("MainWindow", "N\303\272mero de procesos", nullptr));
         menuProyecto_de_Sistemas_Operativos->setTitle(QCoreApplication::translate("MainWindow", "Proyecto de Sistemas Operativos", nullptr));
     } // retranslateUi
 

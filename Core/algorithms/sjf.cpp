@@ -8,11 +8,12 @@ void sjf::add_process(const process& p) {
 }
 
 void sjf::execute() {
+    // Ordenar los procesos por ráfaga (y por llegada si las ráfagas son iguales)
     std::sort(processes.begin(), processes.end(), [](const process& a, const process& b) {
-        if (a.get_arrival_time() == b.get_arrival_time()) {
-            return a.get_burst_time() < b.get_burst_time();
+        if (a.get_burst_time() == b.get_burst_time()) {
+            return a.get_arrival_time() < b.get_arrival_time();
         }
-        return a.get_arrival_time() < b.get_arrival_time();
+        return a.get_burst_time() < b.get_burst_time();
     });
 
     int current_time = 0;
