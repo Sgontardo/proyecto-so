@@ -53,6 +53,9 @@ public:
     QWidget *fcfsPage;
     QWidget *fcfsWidget;
     QLabel *label_fcfs;
+    QWidget *sjfPage;
+    QWidget *sjfWidget;
+    QLabel *label_sjf;
     QWidget *priorityPage;
     QWidget *priorityWidget;
     QLabel *label_prioridad;
@@ -193,6 +196,15 @@ public:
         label_fcfs->setObjectName("label_fcfs");
         label_fcfs->setGeometry(QRect(0, 0, 171, 61));
         stackedWidget_config->addWidget(fcfsPage);
+        sjfPage = new QWidget();
+        sjfPage->setObjectName("sjfPage");
+        sjfWidget = new QWidget(sjfPage);
+        sjfWidget->setObjectName("sjfWidget");
+        sjfWidget->setGeometry(QRect(10, 20, 161, 111));
+        label_sjf = new QLabel(sjfWidget);
+        label_sjf->setObjectName("label_sjf");
+        label_sjf->setGeometry(QRect(0, 40, 161, 16));
+        stackedWidget_config->addWidget(sjfPage);
         priorityPage = new QWidget();
         priorityPage->setObjectName("priorityPage");
         priorityWidget = new QWidget(priorityPage);
@@ -316,6 +328,7 @@ public:
         label_config_alg->setText(QCoreApplication::translate("MainWindow", "Configuraci\303\263n del Algoritmo", nullptr));
         label_quantum->setText(QCoreApplication::translate("MainWindow", "Quantum", nullptr));
         label_fcfs->setText(QCoreApplication::translate("MainWindow", "FCFS no requiere configuraci\303\263n", nullptr));
+        label_sjf->setText(QCoreApplication::translate("MainWindow", "SJF no requiere configuraci\303\263n", nullptr));
         label_prioridad->setText(QCoreApplication::translate("MainWindow", "Modo de Prioridad", nullptr));
         comboBox_prioridad->setItemText(0, QCoreApplication::translate("MainWindow", "Con Desalojo", nullptr));
         comboBox_prioridad->setItemText(1, QCoreApplication::translate("MainWindow", "Sin Desalojo", nullptr));

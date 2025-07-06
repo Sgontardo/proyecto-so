@@ -16,6 +16,8 @@ public:
     double get_avg_waiting_time() const;
     double get_avg_response_time() const;
 
+    const std::vector<process>& get_processes() const;
+
 private:
     std::vector<process> processes;
     double avg_turnaround_time;

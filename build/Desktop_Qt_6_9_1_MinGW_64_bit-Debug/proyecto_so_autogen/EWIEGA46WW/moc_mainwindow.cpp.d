@@ -399,6 +399,7 @@ C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyect
   C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyecto_so/Core/algorithms/fcfs.h \
   C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyecto_so/Core/algorithms/priority.h \
   C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyecto_so/Core/algorithms/round_robin.h \
+  C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyecto_so/Core/algorithms/sjf.h \
   C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyecto_so/Core/process.h \
   C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyecto_so/UI/results_display.h \
   C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyecto_so/Utils/process_generator.h

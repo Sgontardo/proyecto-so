@@ -338,6 +338,31 @@ background-color: rgb(248, 255, 243);
        </widget>
       </widget>
      </widget>
+     <widget class="QWidget" name="sjfPage">
+      <widget class="QWidget" name="sjfWidget" native="true">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>161</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="label_sjf">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>40</y>
+          <width>161</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>SJF no requiere configuración</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
      <widget class="QWidget" name="priorityPage">
       <widget class="QWidget" name="priorityWidget" native="true">
        <property name="geometry">

@@ -3,9 +3,12 @@
 
 #include <QMainWindow>
 #include <QTableWidget>
+
+#include "Core/algorithms/fcfs.h"
+#include "Core/algorithms/sjf.h"
 #include "Core/algorithms/round_robin.h"
 #include "Core/algorithms/priority.h"
-#include "Core/algorithms/fcfs.h"
+
 #include "Utils/process_generator.h"
 #include "UI/results_display.h"
 

@@ -65,11 +65,13 @@ void MainWindow::onAlgorithmSelectionChanged()
     if (ui->radioButton_fcfs->isChecked()) {
         ui->stackedWidget_config->setCurrentIndex(1); // Configuración de FCFS
     } else if (ui->radioButton_priority->isChecked()) {
-        ui->stackedWidget_config->setCurrentIndex(2); // Configuración de Prioridad
+        ui->stackedWidget_config->setCurrentIndex(3); // Configuración de Prioridad
     } else if (ui->radioButton_rr->isChecked()) {
         ui->stackedWidget_config->setCurrentIndex(0); // Configuración de Round Robin
+    } else if (ui->radioButton_sjf->isChecked()) {
+        ui->stackedWidget_config->setCurrentIndex(2); // Configuración de SJF
     } else {
-        ui->stackedWidget_config->setCurrentIndex(3); // Configuración de otros algoritmos (si existe)
+        ui->stackedWidget_config->setCurrentIndex(4); // Configuración de otros algoritmos (si existe)
     }
 
     // Actualizar la tabla de procesos para reflejar las prioridades si es necesario
@@ -179,6 +181,37 @@ void MainWindow::onExecuteButtonClicked()
         double avg_turnaround = fcfs_algorithm.get_avg_turnaround_time();
         double avg_waiting = fcfs_algorithm.get_avg_waiting_time();
         double cpu_utilization = 100.0; // Para FCFS, asumimos 100% de utilización
+
+        updateMetrics(avg_turnaround, avg_waiting, cpu_utilization);
+    }
+
+    if (ui->radioButton_sjf->isChecked()) {
+        // Configurar el algoritmo SJF
+        sjf sjf_algorithm;
+        for (int i = 0; i < ui->tableWidget_procesos->rowCount(); ++i) {
+            int id = ui->tableWidget_procesos->item(i, 0)->text().toInt();
+            int arrival = ui->tableWidget_procesos->item(i, 1)->text().toInt();
+            int burst = ui->tableWidget_procesos->item(i, 2)->text().toInt();
+            sjf_algorithm.add_process(process(id, arrival, burst, 0));
+        }
+
+        // Ejecutar el algoritmo
+        sjf_algorithm.execute();
+
+        // Mostrar resultados individuales
+        const auto& procesos = sjf_algorithm.get_processes();
+        ui->tableWidget_resultados->setRowCount(procesos.size());
+        for (int i = 0; i < procesos.size(); ++i) {
+            ui->tableWidget_resultados->setItem(i, 0, new QTableWidgetItem(QString::number(procesos[i].get_id())));
+            ui->tableWidget_resultados->setItem(i, 1, new QTableWidgetItem(QString::number(procesos[i].get_turnaround_time())));
+            ui->tableWidget_resultados->setItem(i, 2, new QTableWidgetItem(QString::number(procesos[i].get_waiting_time())));
+            ui->tableWidget_resultados->setItem(i, 3, new QTableWidgetItem(QString::number(procesos[i].get_response_time())));
+        }
+
+        // Calcular y mostrar métricas
+        double avg_turnaround = sjf_algorithm.get_avg_turnaround_time();
+        double avg_waiting = sjf_algorithm.get_avg_waiting_time();
+        double cpu_utilization = 100.0; // Para SJF, asumimos 100% de utilización
 
         updateMetrics(avg_turnaround, avg_waiting, cpu_utilization);
     }
