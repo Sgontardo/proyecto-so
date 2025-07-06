@@ -50,6 +50,9 @@ public:
     QWidget *roundRobinWidget;
     QLabel *label_quantum;
     QLineEdit *quantumInput;
+    QWidget *fcfsPage;
+    QWidget *fcfsWidget;
+    QLabel *label_fcfs;
     QWidget *priorityPage;
     QWidget *priorityWidget;
     QLabel *label_prioridad;
@@ -181,6 +184,15 @@ public:
         quantumInput->setObjectName("quantumInput");
         quantumInput->setGeometry(QRect(100, 40, 51, 21));
         stackedWidget_config->addWidget(roundRobinPage);
+        fcfsPage = new QWidget();
+        fcfsPage->setObjectName("fcfsPage");
+        fcfsWidget = new QWidget(fcfsPage);
+        fcfsWidget->setObjectName("fcfsWidget");
+        fcfsWidget->setGeometry(QRect(0, 20, 181, 101));
+        label_fcfs = new QLabel(fcfsWidget);
+        label_fcfs->setObjectName("label_fcfs");
+        label_fcfs->setGeometry(QRect(0, 0, 171, 61));
+        stackedWidget_config->addWidget(fcfsPage);
         priorityPage = new QWidget();
         priorityPage->setObjectName("priorityPage");
         priorityWidget = new QWidget(priorityPage);
@@ -303,6 +315,7 @@ public:
         radioButton_priority->setText(QCoreApplication::translate("MainWindow", "Prioridades", nullptr));
         label_config_alg->setText(QCoreApplication::translate("MainWindow", "Configuraci\303\263n del Algoritmo", nullptr));
         label_quantum->setText(QCoreApplication::translate("MainWindow", "Quantum", nullptr));
+        label_fcfs->setText(QCoreApplication::translate("MainWindow", "FCFS no requiere configuraci\303\263n", nullptr));
         label_prioridad->setText(QCoreApplication::translate("MainWindow", "Modo de Prioridad", nullptr));
         comboBox_prioridad->setItemText(0, QCoreApplication::translate("MainWindow", "Con Desalojo", nullptr));
         comboBox_prioridad->setItemText(1, QCoreApplication::translate("MainWindow", "Sin Desalojo", nullptr));

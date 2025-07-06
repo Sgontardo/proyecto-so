@@ -52,3 +52,7 @@ double fcfs::get_avg_waiting_time() const {
 double fcfs::get_avg_response_time() const {
     return avg_response_time;
 }
+
+const std::vector<process>& fcfs::get_processes() const {
+    return processes;
+}

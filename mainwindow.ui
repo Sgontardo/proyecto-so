@@ -313,6 +313,31 @@ background-color: rgb(248, 255, 243);
        </widget>
       </widget>
      </widget>
+     <widget class="QWidget" name="fcfsPage">
+      <widget class="QWidget" name="fcfsWidget" native="true">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>20</y>
+         <width>181</width>
+         <height>101</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="label_fcfs">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>171</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>FCFS no requiere configuración</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
      <widget class="QWidget" name="priorityPage">
       <widget class="QWidget" name="priorityWidget" native="true">
        <property name="geometry">

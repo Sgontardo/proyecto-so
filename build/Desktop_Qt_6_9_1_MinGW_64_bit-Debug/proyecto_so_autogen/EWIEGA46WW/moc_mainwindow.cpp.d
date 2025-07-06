@@ -396,6 +396,7 @@ C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyect
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
+  C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyecto_so/Core/algorithms/fcfs.h \
   C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyecto_so/Core/algorithms/priority.h \
   C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyecto_so/Core/algorithms/round_robin.h \
   C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyecto_so/Core/process.h \
