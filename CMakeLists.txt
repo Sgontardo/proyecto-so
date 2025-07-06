@@ -29,11 +29,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Core/algorithms/priority.h Core/algorithms/priority.cpp
         Core/algorithms/fcfs.h Core/algorithms/fcfs.cpp
         Core/algorithms/sjf.h Core/algorithms/sjf.cpp
-        Core/scheduler.h Core/scheduler.cpp
         Core/process.h Core/process.cpp
-        Core/metrics.h Core/metrics.cpp
         Utils/process_generator.h Utils/process_generator.cpp
-        UI/results_display.h UI/results_display.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET proyecto_so APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

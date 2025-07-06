@@ -10,7 +10,6 @@
 #include "Core/algorithms/priority.h"
 
 #include "Utils/process_generator.h"
-#include "UI/results_display.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

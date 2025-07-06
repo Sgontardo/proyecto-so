@@ -1,6 +1,5 @@
 C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyecto_so/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/proyecto_so_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyecto_so/mainwindow.h \
   C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyecto_so/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/proyecto_so_autogen/moc_predefs.h \
-  C:/Qt/6.9.1/mingw_64/include/QtCore/QObject \
   C:/Qt/6.9.1/mingw_64/include/QtCore/q17memory.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.9.1/mingw_64/include/QtCore/q20iterator.h \
@@ -159,7 +158,6 @@ C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyect
   C:/Qt/6.9.1/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/QTableWidget \
-  C:/Qt/6.9.1/mingw_64/include/QtWidgets/QWidget \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractitemview.h \
   C:/Qt/6.9.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
@@ -401,5 +399,4 @@ C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyect
   C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyecto_so/Core/algorithms/round_robin.h \
   C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyecto_so/Core/algorithms/sjf.h \
   C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyecto_so/Core/process.h \
-  C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyecto_so/UI/results_display.h \
   C:/Sergio/UCAB/Semestre\ Marzo-Julio\ 2025/Sistemas\ Operativos/Proyecto/proyecto_so/Utils/process_generator.h
