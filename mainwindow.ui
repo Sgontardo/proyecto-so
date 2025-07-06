@@ -273,7 +273,7 @@ background-color: rgb(248, 255, 243);
 }</string>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="roundRobinPage">
       <widget class="QWidget" name="roundRobinWidget" native="true">
@@ -288,7 +288,7 @@ background-color: rgb(248, 255, 243);
        <widget class="QLabel" name="label_quantum">
         <property name="geometry">
          <rect>
-          <x>10</x>
+          <x>20</x>
           <y>40</y>
           <width>61</width>
           <height>21</height>
@@ -327,9 +327,9 @@ background-color: rgb(248, 255, 243);
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>0</y>
+          <y>40</y>
           <width>171</width>
-          <height>61</height>
+          <height>21</height>
          </rect>
         </property>
         <property name="text">
@@ -351,10 +351,10 @@ background-color: rgb(248, 255, 243);
        <widget class="QLabel" name="label_sjf">
         <property name="geometry">
          <rect>
-          <x>0</x>
+          <x>10</x>
           <y>40</y>
           <width>161</width>
-          <height>16</height>
+          <height>21</height>
          </rect>
         </property>
         <property name="text">
@@ -376,10 +376,10 @@ background-color: rgb(248, 255, 243);
        <widget class="QLabel" name="label_prioridad">
         <property name="geometry">
          <rect>
-          <x>20</x>
+          <x>30</x>
           <y>20</y>
           <width>111</width>
-          <height>16</height>
+          <height>21</height>
          </rect>
         </property>
         <property name="text">
@@ -389,7 +389,7 @@ background-color: rgb(248, 255, 243);
        <widget class="QComboBox" name="comboBox_prioridad">
         <property name="geometry">
          <rect>
-          <x>30</x>
+          <x>40</x>
           <y>50</y>
           <width>91</width>
           <height>21</height>

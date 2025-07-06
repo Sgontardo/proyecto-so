@@ -184,7 +184,7 @@ public:
         roundRobinWidget->setGeometry(QRect(0, 20, 181, 141));
         label_quantum = new QLabel(roundRobinWidget);
         label_quantum->setObjectName("label_quantum");
-        label_quantum->setGeometry(QRect(10, 40, 61, 21));
+        label_quantum->setGeometry(QRect(20, 40, 61, 21));
         label_quantum->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
         quantumInput = new QLineEdit(roundRobinWidget);
         quantumInput->setObjectName("quantumInput");
@@ -197,7 +197,7 @@ public:
         fcfsWidget->setGeometry(QRect(0, 20, 181, 141));
         label_fcfs = new QLabel(fcfsWidget);
         label_fcfs->setObjectName("label_fcfs");
-        label_fcfs->setGeometry(QRect(0, 0, 171, 61));
+        label_fcfs->setGeometry(QRect(0, 40, 171, 21));
         stackedWidget_config->addWidget(fcfsPage);
         sjfPage = new QWidget();
         sjfPage->setObjectName("sjfPage");
@@ -206,7 +206,7 @@ public:
         sjfWidget->setGeometry(QRect(0, 20, 181, 141));
         label_sjf = new QLabel(sjfWidget);
         label_sjf->setObjectName("label_sjf");
-        label_sjf->setGeometry(QRect(0, 40, 161, 16));
+        label_sjf->setGeometry(QRect(10, 40, 161, 21));
         stackedWidget_config->addWidget(sjfPage);
         priorityPage = new QWidget();
         priorityPage->setObjectName("priorityPage");
@@ -215,12 +215,12 @@ public:
         priorityWidget->setGeometry(QRect(0, 20, 181, 141));
         label_prioridad = new QLabel(priorityWidget);
         label_prioridad->setObjectName("label_prioridad");
-        label_prioridad->setGeometry(QRect(20, 20, 111, 16));
+        label_prioridad->setGeometry(QRect(30, 20, 111, 21));
         comboBox_prioridad = new QComboBox(priorityWidget);
         comboBox_prioridad->addItem(QString());
         comboBox_prioridad->addItem(QString());
         comboBox_prioridad->setObjectName("comboBox_prioridad");
-        comboBox_prioridad->setGeometry(QRect(30, 50, 91, 21));
+        comboBox_prioridad->setGeometry(QRect(40, 50, 91, 21));
         stackedWidget_config->addWidget(priorityPage);
         frame_7 = new QFrame(frame);
         frame_7->setObjectName("frame_7");
@@ -329,7 +329,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget_config->setCurrentIndex(3);
+        stackedWidget_config->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
