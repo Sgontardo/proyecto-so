@@ -86,6 +86,7 @@ void round_robin::execute() {
     calculate_metrics();
 }
 
+// Calcula las métricas promedio de turnaround, waiting y response time
 void round_robin::calculate_metrics() {
     double total_turnaround_time = 0;
     double total_waiting_time = 0;
@@ -102,22 +103,27 @@ void round_robin::calculate_metrics() {
     avg_response_time = total_response_time / processes.size();
 }
 
+// Devuelve el tiempo promedio de turnaround
 double round_robin::get_avg_turnaround_time() const {
     return avg_turnaround_time;
 }
 
+// Devuelve el tiempo promedio de espera
 double round_robin::get_avg_waiting_time() const {
     return avg_waiting_time;
 }
 
+// Devuelve el tiempo promedio de respuesta
 double round_robin::get_avg_response_time() const {
     return avg_response_time;
 }
 
+// Devuelve la lista de procesos
 const std::vector<process>& round_robin::get_processes() const {
     return processes;
 }
 
+// Calcula la utilización de la CPU
 double round_robin::get_cpu_utilization() const {
     int total_execution_time = 0; // Tiempo total de CPU ocupada
     int arrival_time_min = INT_MAX; // Menor tiempo de llegada

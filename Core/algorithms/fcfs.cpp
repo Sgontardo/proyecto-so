@@ -1,13 +1,18 @@
 #include "fcfs.h"
 #include <algorithm>
 
+// Constructor de la clase fcfs
+// Inicializa las métricas promedio en 0
 fcfs::fcfs() : avg_turnaround_time(0), avg_waiting_time(0), avg_response_time(0) {}
 
+// Agrega un proceso a la lista de procesos
 void fcfs::add_process(const process& p) {
     processes.push_back(p);
 }
 
+// Ejecuta el algoritmo de planificación FCFS (First Come First Served)
 void fcfs::execute() {
+    // Ordenar los procesos por tiempo de llegada
     std::sort(processes.begin(), processes.end(), [](const process& a, const process& b) {
         return a.get_arrival_time() < b.get_arrival_time();
     });
@@ -26,6 +31,7 @@ void fcfs::execute() {
     calculate_metrics();
 }
 
+// Calcula las métricas promedio de turnaround, waiting y response time
 void fcfs::calculate_metrics() {
     double total_turnaround_time = 0;
     double total_waiting_time = 0;
@@ -42,6 +48,7 @@ void fcfs::calculate_metrics() {
     avg_response_time = total_response_time / processes.size();
 }
 
+// Calcula la utilización de la CPU
 double fcfs::get_cpu_utilization() const {
     int total_burst_time = 0; // Tiempo total de CPU ocupada
     int arrival_time_min = INT_MAX; // Menor tiempo de llegada
@@ -57,18 +64,22 @@ double fcfs::get_cpu_utilization() const {
     return (total_time > 0) ? (static_cast<double>(total_burst_time) / total_time) * 100 : 0.0;
 }
 
+// Devuelve el tiempo promedio de turnaround
 double fcfs::get_avg_turnaround_time() const {
     return avg_turnaround_time;
 }
 
+// Devuelve el tiempo promedio de espera
 double fcfs::get_avg_waiting_time() const {
     return avg_waiting_time;
 }
 
+// Devuelve el tiempo promedio de respuesta
 double fcfs::get_avg_response_time() const {
     return avg_response_time;
 }
 
+// Devuelve la lista de procesos
 const std::vector<process>& fcfs::get_processes() const {
     return processes;
 }

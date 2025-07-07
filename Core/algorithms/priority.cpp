@@ -3,12 +3,16 @@
 #include <queue>
 #include <iostream>
 
+// Constructor de la clase priority
+// Inicializa los valores de las métricas y el indicador de si el algoritmo es preventivo o no
 priority::priority(bool preemptive) : preemptive(preemptive), avg_turnaround_time(0), avg_waiting_time(0), avg_response_time(0), idle_time(0) {}
 
+// Agrega un proceso a la lista de procesos
 void priority::add_process(const process& p) {
     processes.push_back(p);
 }
 
+// Ejecuta el algoritmo de planificación por prioridad
 void priority::execute() {
     if (preemptive) {
         auto compare = [](process* a, process* b) {
@@ -94,6 +98,7 @@ void priority::execute() {
     calculate_metrics();
 }
 
+// Calcula las métricas promedio de turnaround, waiting y response time
 void priority::calculate_metrics() {
     double total_turnaround_time = 0;
     double total_waiting_time = 0;
@@ -110,6 +115,7 @@ void priority::calculate_metrics() {
     avg_response_time = total_response_time / processes.size();
 }
 
+// Calcula la utilización de la CPU
 double priority::get_cpu_utilization() const {
     int total_burst_time = 0;
     int arrival_time_min = INT_MAX;
@@ -125,18 +131,22 @@ double priority::get_cpu_utilization() const {
     return (total_time > 0) ? (static_cast<double>(total_burst_time) / total_time) * 100 : 0.0;
 }
 
+// Devuelve el tiempo promedio de turnaround
 double priority::get_avg_turnaround_time() const {
     return avg_turnaround_time;
 }
 
+// Devuelve el tiempo promedio de espera
 double priority::get_avg_waiting_time() const {
     return avg_waiting_time;
 }
 
+// Devuelve el tiempo promedio de respuesta
 double priority::get_avg_response_time() const {
     return avg_response_time;
 }
 
+// Devuelve la lista de procesos
 const std::vector<process>& priority::get_processes() const {
     return processes;
 }
